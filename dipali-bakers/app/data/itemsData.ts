@@ -89,4 +89,4 @@ export const menuItems = {
   ]
 }
 
-export const phoneNumber = '9879143722'
+export const phoneNumber = '919313747782'
