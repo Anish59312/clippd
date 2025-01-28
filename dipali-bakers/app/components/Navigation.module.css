@@ -1,0 +1,133 @@
+/* .navigation {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  z-index: 10;
+}
+
+.navLink {
+  color: #9ca3af;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #f3f4f6;
+}
+
+@media (max-width: 640px) {
+  .navigation {
+    flex-wrap: wrap;
+  }
+
+  .navLink {
+    flex: 1 0 50%;
+    text-align: center;
+    padding: 0.5rem 0;
+  }
+}
+ */
+
+/* Navigation Container */
+.navigation {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  z-index: 1;
+  transition: all 0.3s ease;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Collapsed state */
+.navigation.collapsed {
+  margin-top: 2rem;
+  max-height: 100px; /* Show at least two rows */
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 3rem; /* Space for the button */
+}
+
+/* Navigation Links */
+.navLink {
+  color: #9ca3af;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  flex: 1 0 auto;
+  text-align: center;
+  min-height: 2.5rem; /* Set a minimum height for consistency */
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #f3f4f6;
+}
+
+/* Button Backdrop */
+.buttonBackdrop {
+  width: 100%; /* Full width of the screen */
+  height: 3rem; /* Same height as the button */
+  position: relative;
+  top: -1rem;
+  left: 0;
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.9), transparent);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1; /* Ensure it's above collapsed content but below the button */
+}
+
+/* Expand Button */
+.expandButton {
+  background: rgba(55, 65, 81, 0.9);
+  color: #f3f4f6;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2; /* Ensure it's above the backdrop */
+}
+
+.expandButton:hover {
+  background: rgba(75, 85, 99, 0.9);
+  transform: scale(1.1);
+}
+
+.expandButton::after {
+  content: '▼';
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+  top: 0rem;
+}
+
+.expandButton.expanded::after {
+  content: '▲';
+}
+
+/* Responsive Adjustments */
+@media (max-height: 64px) {
+  .navigation {
+    padding-bottom: 50px; /* Space for the dropdown button */
+  }
+}

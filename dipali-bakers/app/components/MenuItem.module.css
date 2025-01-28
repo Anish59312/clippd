@@ -1,0 +1,141 @@
+.row {
+  background-color: rgba(31, 41, 55, 0.5);
+  transition: background-color 0.3s ease;
+  border-radius: 0.25rem; /* Rounded corners */
+}
+
+.row:hover {
+  background-color: rgba(31, 41, 55, 0.8);
+}
+
+.name {
+  padding: 1rem 0.5rem;
+  min-width: 20vw;
+}
+
+.price {
+  padding: 1rem 0.5rem;
+  color: #10b981;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 0.5rem;
+}
+
+.button {
+  background-color: #4b5563;
+  color: #f3f4f6;
+  border: none;
+  border-radius: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #6b7280;
+}
+
+.quantity {
+  margin: 0 0.5rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .price {
+    display: none;
+  }
+
+  .to-remove-sm
+  {
+    display: none;
+  }
+  
+  .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .name::after {
+    content: '₹' attr(data-price);
+    color: #10b981;
+  }
+}
+
+/* .row {
+  background-color: rgba(31, 41, 55, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.row:hover {
+  background-color: rgba(31, 41, 55, 0.8);
+}
+
+.name {
+  padding: 1rem 0.5rem;
+}
+
+.price {
+  padding: 1rem 0.5rem;
+  color: #10b981;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem 0.5rem;
+}
+
+.button {
+  background-color: #4b5563;
+  color: #f3f4f6;
+  border: none;
+  border-radius: 0.25rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #6b7280;
+}
+
+.quantity {
+  margin: 0 0.5rem;
+  min-width: 1.5rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .price {
+    display: none;
+  }
+  
+  .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .name::after {
+    content: '₹' attr(data-price);
+    color: #10b981;
+  }
+}
+ */
