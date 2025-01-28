@@ -1,4 +1,7 @@
-This project provides working QR codes designed for use in restaurants. These QR codes can be printed on cards or stickers and placed on tables, allowing customers to scan and access your restaurant's digital menu or services seamlessly.
+# Clippid QR Code System
+
+- This project provides working QR codes designed for use in restaurants. 
+- These QR codes can be printed on cards or stickers and placed on tables, allowing customers to scan and access your restaurant's digital menu or services seamlessly.
 
 ![Clippid Sample QR Card](images/clippid-sample-qr-card.png)
 
