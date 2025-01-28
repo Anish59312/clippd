@@ -1,9 +1,11 @@
 # Clippid QR Code System
 
-- This project provides working QR codes designed for use in restaurants. 
+- [Deployed Sample](https://clippd.vercel.app/?table_number=1)
+- This project provides QR codes designed for use in restaurants. 
 - These QR codes can be printed on cards or stickers and placed on tables, allowing customers to scan and access your restaurant's digital menu or services seamlessly.
 
-![Clippid Sample QR Card](images/clippid-sample-qr-card.png)
+![Clippid Sample QR Card](img/clippid-sample-qr-card.png)
+- Above are working sample QR sticker/card designs.
 
 ## Current Status
 
