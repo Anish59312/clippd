@@ -9,7 +9,7 @@
 
 ## Current Status
 
-- The functionality is currently similar to the **Dipali Bakers** application.
+- Currently **Dipali Bakers** is the closest to the application I want to build.
 - To run the project locally, refer to the `README.md` file of the **Dipali Bakers** repository.
 
 ## For Restaurants
