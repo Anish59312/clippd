@@ -1,89 +1,68 @@
 export const menuSections = [
   {
-    "id": "appetizers",
-    "title": "Appetizers"
+    "id": "breakfast",
+    "title": "Breakfast"
   },
   {
-    "id": "main-course",
-    "title": "Main Course"
+    "id": "punjabi-veg.",
+    "title": "Punjabi Veg."
   },
   {
-    "id": "desserts",
-    "title": "Desserts"
+    "id": "chinese",
+    "title": "Chinese"
   },
   {
     "id": "beverages",
     "title": "Beverages"
-  },
-  {
-    "id": "breakfast",
-    "title": "Breakfast"
   }
 ]
 
 export const menuItems = {
-  "appetizers": [
+  "breakfast": [
     {
       "id": 1,
       "name": "Samosa",
-      "price": 50
+      "price": 30
     },
     {
       "id": 2,
-      "name": "Pakoda",
-      "price": 60
+      "name": "Mendu Vada",
+      "price": 30
     },
     {
       "id": 3,
-      "name": "Paneer Tikka",
-      "price": 120
+      "name": "Poha",
+      "price": 15
     }
   ],
-  "main-course": [
+  "punjabi-veg.": [
     {
       "id": 4,
-      "name": "Butter Chicken",
-      "price": 250
+      "name": "Hydrabadi Biryani",
+      "price": 65
     },
     {
       "id": 5,
-      "name": "Palak Paneer",
-      "price": 200
-    },
-    {
-      "id": 6,
-      "name": "Biryani",
-      "price": 180
+      "name": "Veg. Biryani",
+      "price": 250
     }
   ],
-  "desserts": [
+  "chinese": [
     {
-      "id": 7,
-      "name": "Gulab Jamun",
-      "price": 80
-    },
-    {
-      "id": 8,
-      "name": "Rasmalai",
+      "id": 6,
+      "name": "Chinese Bhel",
       "price": 100
     }
   ],
   "beverages": [
     {
-      "id": 9,
-      "name": "Lassi",
+      "id": 7,
+      "name": "Tea",
       "price": 70
     },
     {
-      "id": 10,
-      "name": "Masala Chai",
-      "price": 40
-    }
-  ],
-  "breakfast": [
-    {
-      "id": 11,
-      "name": "Sev Usual",
+      "id": 8,
+      "name": "Coffee",
       "price": 40
     }
   ]
