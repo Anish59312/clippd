@@ -1,7 +1,6 @@
 'use client'
 
-// TODO: make python app to make changes to itemsData
-// TODO: make the site responsive - quantity on mobile mode, alignment  & margin of header quantity.
+//TODO Add floating modal for name submission
 
 import Navigation from './components/Navigation'
 import MenuSection from './components/MenuSection'
@@ -45,7 +44,6 @@ export default function Home() {
   }
 
   return (
-    // <main className="min-h-screen pb-16">
     <main className="min-h-screen pb-16 max-w-4xl mx-auto px-4">
       <Navigation sections={menuSections} />
       {menuSections.map((section) => (
@@ -57,6 +55,7 @@ export default function Home() {
           onQuantityChange={handleQuantityChange} // Pass handler
         />
       ))}
+      
       <FloatingSubmitButton phoneNumber={phoneNumber} printItems={printItems} quantities={quantities} tableNumber={tableNumber}/>
     </main>
   )

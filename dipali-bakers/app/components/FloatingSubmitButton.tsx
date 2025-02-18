@@ -47,7 +47,7 @@ export default function FloatingSubmitButton({printItems, quantities, tableNumbe
     const url_menu = serializeMenuData(); 
     phoneNumber = phoneNumber
     const table_number = tableNumber; // table number from parent
-    const ending_message = encodeURIComponent(`\n\n--- Info for Staff ---\nTable Number: ${table_number}\n--- Add Special Instructions ---\n\n\n----- Click 'Send Button' to place the order-----`);
+    const ending_message = encodeURIComponent(`\n\n--- Send Payment Screenshot for Order Confirmation ---\n\n\n----- Click 'Send Button' to place the order-----`);
     const url_to_hit = `https://wa.me/${phoneNumber}?text=${url_menu}${ending_message}`;
 
     console.log(url_to_hit)
