@@ -6,12 +6,23 @@ import Navigation from './components/Navigation'
 import MenuSection from './components/MenuSection'
 import FloatingSubmitButton from './components/FloatingSubmitButton'
 import {menuItems, menuSections, phoneNumber} from './data/itemsData'
+import TakeUserInfoButton from './components/TakeUserInfoButton' 
 import { useState, useEffect } from 'react'
+import SubmitModal from './components/SubmitModal'
 
 export default function Home() {
 
   const [quantities, setQuantities] = useState<{ [key: number]: number }>({})
   const [tableNumber, setTableNumber] = useState<number>(0);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const toggleModal = () => {
+    if(isOpen == false)
+      setIsOpen(true)
+    else
+      setIsOpen(false)
+    console.log(isOpen)
+  }
 
   const handleQuantityChange = (id: number, quantity: number) => {
     setQuantities((prevQuantities) => ({
@@ -56,8 +67,9 @@ export default function Home() {
         />
       ))}
       
-      <FloatingSubmitButton phoneNumber={phoneNumber} printItems={printItems} quantities={quantities} tableNumber={tableNumber}/>
+      {/* <FloatingSubmitButton phoneNumber={phoneNumber} printItems={printItems} quantities={quantities} tableNumber={tableNumber}/> */}
+      <TakeUserInfoButton toggleModal={toggleModal} />
+      <SubmitModal isOpen={isOpen} onClose={toggleModal} />
     </main>
   )
 }
-

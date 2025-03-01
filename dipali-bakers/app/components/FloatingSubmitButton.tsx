@@ -15,8 +15,10 @@ interface FloatingSubmitButtonProps {
 export default function FloatingSubmitButton({printItems, quantities, tableNumber, phoneNumber} : FloatingSubmitButtonProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  var totalCost = 0;
+
   const serializeMenuData = () => {
-    let serializedData = 'Order Summary\n==============\nName\tQuantity\n-----------------------\n'; // Header row for the table
+    let serializedData = 'Order Summary\n==============\nName\tQty\tPrice\n-----------------------\n'; // Header row for the table
   
     menuSections.forEach((section) => {
   
@@ -27,7 +29,9 @@ export default function FloatingSubmitButton({printItems, quantities, tableNumbe
           return; // Skip items with zero or undefined quantity
         }
   
-        const line = `${item.name}\t${quantity}`;
+        totalCost += item.price*quantity
+
+        const line = `${item.name}\t${quantity}\t${item.price*quantity}`;
         serializedData += `${line}\n`; 
       });
     });
@@ -47,7 +51,8 @@ export default function FloatingSubmitButton({printItems, quantities, tableNumbe
     const url_menu = serializeMenuData(); 
     phoneNumber = phoneNumber
     const table_number = tableNumber; // table number from parent
-    const ending_message = encodeURIComponent(`\n\n--- Send Payment Screenshot for Order Confirmation ---\n\n\n----- Click 'Send Button' to place the order-----`);
+    const name = "Sample Name of Person"
+    const ending_message = encodeURIComponent(`\n\n--- Send Payment Screenshot for Order Confirmation ---\n\n\n----- Click 'Send Button' to place the order-----\nTotal - ${totalCost}Rs.`);
     const url_to_hit = `https://wa.me/${phoneNumber}?text=${url_menu}${ending_message}`;
 
     console.log(url_to_hit)
