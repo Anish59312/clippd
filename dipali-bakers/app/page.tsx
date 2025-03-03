@@ -1,27 +1,30 @@
 'use client'
 
 //TODO Add floating modal for name submission
+//TODO Routing not working
 
 import Navigation from './components/Navigation'
 import MenuSection from './components/MenuSection'
 import FloatingSubmitButton from './components/FloatingSubmitButton'
-import {menuItems, menuSections, phoneNumber} from './data/itemsData'
+import {menuItems, menuSections} from './data/itemsData'
 import TakeUserInfoButton from './components/TakeUserInfoButton' 
 import { useState, useEffect } from 'react'
 import SubmitModal from './components/SubmitModal'
+import { useSelector, useDispatch, Provider } from 'react-redux';
+import { setTableNumber } from './store';
+
+
 
 export default function Home() {
 
   const [quantities, setQuantities] = useState<{ [key: number]: number }>({})
-  const [tableNumber, setTableNumber] = useState<number>(0);
+  const [tableNumber,setTableNumber] = useState(0)
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleModal = () => {
-    if(isOpen == false)
-      setIsOpen(true)
-    else
-      setIsOpen(false)
-    console.log(isOpen)
+    setIsOpen(!isOpen);
+    console.log(isOpen);
   }
 
   const handleQuantityChange = (id: number, quantity: number) => {
@@ -35,11 +38,11 @@ export default function Home() {
     const getTableNumber = () => {
       const currentUrl = window.location.href;
       const urlParams = new URLSearchParams(new URL(currentUrl).search);
-      const tableNumber = urlParams.get('table_number') || '';
-      return tableNumber
+      const tableNumberFromUrl = urlParams.get('table_number') || '';
+      return tableNumberFromUrl;
     }
 
-    setTableNumber(parseInt(getTableNumber(), 10));
+    setTableNumber(parseInt(getTableNumber()))
   },[]);
 
   const printItems = () => {
@@ -67,9 +70,9 @@ export default function Home() {
         />
       ))}
       
-      {/* <FloatingSubmitButton phoneNumber={phoneNumber} printItems={printItems} quantities={quantities} tableNumber={tableNumber}/> */}
+      {/* <FloatingSubmitButton tableNumber={tableNumber} phoneNumber={phoneNumber} quantities={quantities} /> */}
       <TakeUserInfoButton toggleModal={toggleModal} />
-      <SubmitModal isOpen={isOpen} onClose={toggleModal} />
+      <SubmitModal isOpen={isOpen} onClose={toggleModal} quantites={quantities} />
     </main>
   )
 }

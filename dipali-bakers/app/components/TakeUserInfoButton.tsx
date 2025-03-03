@@ -7,7 +7,7 @@ const TakeUserInfoButton: React.FC<{ toggleModal: () => void }> = ({ toggleModal
 
     return (
         <button onClick={toggleModal} className={styles.button}>
-            Take User Info
+            Next
         </button>
     );
 };

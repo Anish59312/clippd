@@ -23,7 +23,7 @@
     background-color: transparent; /* Red background */
     opacity: 1;
     border: none;
-    padding: 10px 15px;
+    padding: 1px 1px;
     border-radius: 5px;
     cursor: pointer;
     float: right; /* Align to the right */
@@ -31,4 +31,13 @@
 
 .closeButton:hover {
     opacity: 0.5;
+}
+
+.takeInput {
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    margin-top:0;
 }
